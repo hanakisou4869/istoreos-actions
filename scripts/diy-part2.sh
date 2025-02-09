@@ -10,8 +10,8 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# 修改openwrt登陆地址,把下面的 192.168.10.1 修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+# 修改openwrt登陆地址,把下面的 192.168.100.1 修改成你想要的就可以了
+sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 
 # 修改子网掩码
 #sed -i 's/255.255.255.0/255.255.0.0/g' package/base-files/files/bin/config_generate
@@ -213,13 +213,13 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-ikoolproxy
 
 # docker应用
-# svn export https://github.com/kenzok8/small-package/trunk/luci-app-filebrowser
-# rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
-# svn export https://github.com/kenzok8/small-package/trunk/luci-app-kodexplorer
-# rm -rf ../../customfeeds/packages/utils/verysync
-# rm -rf ../../customfeeds/luci/applications/luci-app-verysync
-# svn export https://github.com/kenzok8/small-package/trunk/verysync
-# svn export https://github.com/kenzok8/small-package/trunk/luci-app-verysync
+svn export https://github.com/kenzok8/small-package/trunk/luci-app-filebrowser
+rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
+svn export https://github.com/kenzok8/small-package/trunk/luci-app-kodexplorer
+rm -rf ../../customfeeds/packages/utils/verysync
+rm -rf ../../customfeeds/luci/applications/luci-app-verysync
+svn export https://github.com/kenzok8/small-package/trunk/verysync
+svn export https://github.com/kenzok8/small-package/trunk/luci-app-verysync
 
 # VPN服务器
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-ssr-mudb-server
@@ -380,16 +380,16 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-ikoolproxy=y
 
 # docker应用
-# CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
-# CONFIG_PACKAGE_luci-app-aria2=y
-# CONFIG_PACKAGE_luci-app-transmission=y
-# CONFIG_PACKAGE_luci-app-qbittorrent=y
-# CONFIG_PACKAGE_luci-app-qbittorrent_static=y
-# CONFIG_PACKAGE_luci-app-alist=y
-# CONFIG_PACKAGE_luci-app-filebrowser=y
-# CONFIG_PACKAGE_luci-app-familycloud=y
-# CONFIG_PACKAGE_luci-app-kodexplorer=y
-# CONFIG_PACKAGE_luci-app-rclone=y
+CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+CONFIG_PACKAGE_luci-app-aria2=y
+CONFIG_PACKAGE_luci-app-transmission=y
+CONFIG_PACKAGE_luci-app-qbittorrent=y
+CONFIG_PACKAGE_luci-app-qbittorrent_static=y
+CONFIG_PACKAGE_luci-app-alist=y
+CONFIG_PACKAGE_luci-app-filebrowser=y
+CONFIG_PACKAGE_luci-app-familycloud=y
+CONFIG_PACKAGE_luci-app-kodexplorer=y
+CONFIG_PACKAGE_luci-app-rclone=y
 
 # 局域网分享应用
 # CONFIG_PACKAGE_luci-app-minidlna=y
